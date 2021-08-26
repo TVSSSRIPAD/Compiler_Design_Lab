@@ -1,0 +1,23 @@
+digraph finite_state_machine {
+	rankdir=LR;
+	color=white;
+	fontcolor=white;
+	bgcolor=black;
+	label="Regex : ((a+b)b)*c";
+	node [color=white fontcolor=white shape = doublecircle label=""]; addr_9
+	node [color=white fontcolor=white shape = circle]
+	addr_8 -> addr_9 [color=white fontcolor=white  label = "c" ];
+	addr_7 -> addr_8 [color=white fontcolor=white  label = "e" ];
+	addr_7 -> addr_4 [color=white fontcolor=white  label = "e" ];
+	addr_5 -> addr_6 [color=white fontcolor=white  label = "b" ];
+	addr_1 -> addr_5 [color=white fontcolor=white  label = "e" ];
+	addr_0 -> addr_1 [color=white fontcolor=white  label = "a" ];
+	addr_3 -> addr_5 [color=white fontcolor=white  label = "e" ];
+	addr_2 -> addr_3 [color=white fontcolor=white  label = "b" ];
+	addr_4 -> addr_2 [color=white fontcolor=white  label = "e" ];
+	addr_4 -> addr_0 [color=white fontcolor=white  label = "e" ];
+	addr_6 -> addr_8 [color=white fontcolor=white  label = "e" ];
+	addr_6 -> addr_4 [color=white fontcolor=white  label = "e" ];
+	node [color=white fontcolor=white shape = none label=""]; start
+	start -> addr_7 [color=white fontcolor=white label = "start" ]
+}

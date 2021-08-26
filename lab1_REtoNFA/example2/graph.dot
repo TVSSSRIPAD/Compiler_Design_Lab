@@ -1,0 +1,18 @@
+digraph finite_state_machine {
+	rankdir=LR;
+	color=white;
+	fontcolor=white;
+	bgcolor=black;
+	label="Regex : a+bc";
+	node [color=white fontcolor=white shape = doublecircle label=""]; addr_1
+	node [color=white fontcolor=white shape = doublecircle label=""]; addr_5
+	node [color=white fontcolor=white shape = circle]
+	addr_6 -> addr_2 [color=white fontcolor=white  label = "e" ];
+	addr_6 -> addr_0 [color=white fontcolor=white  label = "e" ];
+	addr_0 -> addr_1 [color=white fontcolor=white  label = "a" ];
+	addr_4 -> addr_5 [color=white fontcolor=white  label = "c" ];
+	addr_2 -> addr_3 [color=white fontcolor=white  label = "b" ];
+	addr_3 -> addr_4 [color=white fontcolor=white  label = "e" ];
+	node [color=white fontcolor=white shape = none label=""]; start
+	start -> addr_6 [color=white fontcolor=white label = "start" ]
+}
