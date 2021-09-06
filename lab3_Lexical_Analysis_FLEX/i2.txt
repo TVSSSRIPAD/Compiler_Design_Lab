@@ -1,0 +1,2 @@
+if a<=10E1 then output1=22 
+else a112= 23E-1
