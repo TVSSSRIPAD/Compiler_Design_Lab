@@ -7,3 +7,4 @@ A repo which contains programs implemented as part of CD Lab
 ### Lab1: Regular Expression to NFA Conversion & DFA Minimization
 ### Lab2: Lexical Analysis - Lexical Analyser implemented in C++ for given grammar
 ### Lab3: Lexical Analysis FLEX - A lexical analyser implemented using FLEX tool 
+### Lab4: Syntax Analysis - Removal of left-recursion; Producing Left-factoring grammar and implementing RecursiveDescentParser (Top-Down Parser)
