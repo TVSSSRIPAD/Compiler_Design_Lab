@@ -1,0 +1,7 @@
+A
+abA abB abc
+B
+b
+S
+tS t
+-1

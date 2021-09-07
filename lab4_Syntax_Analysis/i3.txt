@@ -1,0 +1,13 @@
+E
+TS
+S
++TS e
+T
+FW
+W
+*FW e
+F
+(E) x y 2 
+-1
+E
+x+2*y
