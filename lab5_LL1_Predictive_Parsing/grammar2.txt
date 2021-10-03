@@ -1,0 +1,28 @@
+AE,BE,D,DL,E,F,ES,IOS,IS,NE,P,PE,RE,S,SL,T,TY,VL,WS,VX,ES,IX,BX,AX,RX,EY,TX
++,-,*,/,=,<,>,(,),{,},:=,;,and,else,end,ic,id,if,int,do,fc,float,not,or,print,prog,scan,str,then,while,_eps,$
+P -> prog DL SL end
+DL -> D DL | _eps
+D -> TY VL ;
+TY -> int | float
+VL -> id VX
+VX -> VL | _eps
+SL -> S SL | _eps
+S -> ES | IS | WS | IOS
+ES -> id := E ;
+IS -> if BE then SL IX
+IX -> end | else SL end
+WS ->  while BE do SL end
+IOS ->  print PE | scan id
+PE ->  E | str
+BE ->  AE BX
+BX ->  or AE BX | _eps
+AE ->  NE AX
+AX ->  and NE AX | _eps
+NE ->  not NE | { BE } | RE
+RE ->  E RX
+RX ->  = E | < E | > E
+E ->  T EY
+EY ->  + T EY | - T EY | _eps
+T  -> F TX
+TX ->  * F TX | / F TX | _eps
+F  ->  (E) | id | ic | fc

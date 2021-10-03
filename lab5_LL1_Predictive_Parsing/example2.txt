@@ -1,0 +1,1331 @@
+Enter Question Number: Enter the Start Symbol:- Grammar is :-
+{'P': [['prog', 'DL', 'SL', 'end']], 'DL': [['D', 'DL'], ['_eps']], 'D': [['TY', 'VL', ';']], 'TY': [['int'], ['float']], 'VL': [['id', 'VX']], 'VX': [['VL'], ['_eps']], 'SL': [['S', 'SL'], ['_eps']], 'S': [['ES'], ['IS'], ['WS'], ['IOS']], 'ES': [['id', ':=', 'E', ';']], 'IS': [['if', 'BE', 'then', 'SL', 'IX']], 'IX': [['end'], ['else', 'SL', 'end']], 'WS': [['while', 'BE', 'do', 'SL', 'end']], 'IOS': [['print', 'PE'], ['scan', 'id']], 'PE': [['E'], ['str']], 'BE': [['AE', 'BX']], 'BX': [['or', 'AE', 'BX'], ['_eps']], 'AE': [['NE', 'AX']], 'AX': [['and', 'NE', 'AX'], ['_eps']], 'NE': [['not', 'NE'], ['{', 'BE', '}'], ['RE']], 'RE': [['E', 'RX']], 'RX': [['=', 'E'], ['<', 'E'], ['>', 'E']], 'E': [['T', 'EY']], 'EY': [['+', 'T', 'EY'], ['-', 'T', 'EY'], ['_eps']], 'T': [['F', 'TX']], 'TX': [['*', 'F', 'TX'], ['/', 'F', 'TX'], ['_eps']], 'F': [['(E)'], ['id'], ['ic'], ['fc']]}
+Terminals are 
+['+', '-', '*', '/', '=', '<', '>', '(', ')', '{', '}', ':=', ';', 'and', 'else', 'end', 'ic', 'id', 'if', 'int', 'do', 'fc', 'float', 'not', 'or', 'print', 'prog', 'scan', 'str', 'then', 'while', '_eps', '$']
+Final generated ParseTable is:- 
+                             +                   -                   *                   /                   =                   <                   >                   (                   )                   {                   }                  :=                   ;                 and                else                 end                  ic                  id                  if                 int                  do                  fc               float                 not                  or               print                prog                scan                 str                then               while                   $
+         P                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None['prog', 'DL', 'SL', 'end']                None                None                None                None                None
+        DL                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None            ['_eps']                None            ['_eps']            ['_eps']         ['D', 'DL']                None                None         ['D', 'DL']                None                None            ['_eps']                None            ['_eps']                None                None            ['_eps']                None
+         D                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None   ['TY', 'VL', ';']                None                None   ['TY', 'VL', ';']                None                None                None                None                None                None                None                None                None
+        TY                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None             ['int']                None                None           ['float']                None                None                None                None                None                None                None                None                None
+        VL                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None        ['id', 'VX']                None                None                None                None                None                None                None                None                None                None                None                None                None                None
+        VX                None                None                None                None                None                None                None                None                None                None                None                None            ['_eps']                None                None                None                None              ['VL']                None                None                None                None                None                None                None                None                None                None                None                None                None                None
+        SL                None                None                None                None                None                None                None                None                None                None                None                None                None                None            ['_eps']            ['_eps']                None         ['S', 'SL']         ['S', 'SL']                None                None                None                None                None                None         ['S', 'SL']                None         ['S', 'SL']                None                None         ['S', 'SL']                None
+         S                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None              ['ES']              ['IS']                None                None                None                None                None                None             ['IOS']                None             ['IOS']                None                None              ['WS']                None
+        ES                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None['id', ':=', 'E', ';']                None                None                None                None                None                None                None                None                None                None                None                None                None                None
+        IS                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None['if', 'BE', 'then', 'SL', 'IX']                None                None                None                None                None                None                None                None                None                None                None                None                None
+        IX                None                None                None                None                None                None                None                None                None                None                None                None                None                None['else', 'SL', 'end']             ['end']                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None
+        WS                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None['while', 'BE', 'do', 'SL', 'end']                None
+       IOS                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None     ['print', 'PE']                None      ['scan', 'id']                None                None                None                None
+        PE                None                None                None                None                None                None                None               ['E']                None                None                None                None                None                None                None                None               ['E']               ['E']                None                None                None               ['E']                None                None                None                None                None                None             ['str']                None                None                None
+        BE                None                None                None                None                None                None                None        ['AE', 'BX']                None        ['AE', 'BX']                None                None                None                None                None                None        ['AE', 'BX']        ['AE', 'BX']                None                None                None        ['AE', 'BX']                None        ['AE', 'BX']                None                None                None                None                None                None                None                None
+        BX                None                None                None                None                None                None                None                None                None                None            ['_eps']                None                None                None                None                None                None                None                None                None            ['_eps']                None                None                None  ['or', 'AE', 'BX']                None                None                None                None            ['_eps']                None                None
+        AE                None                None                None                None                None                None                None        ['NE', 'AX']                None        ['NE', 'AX']                None                None                None                None                None                None        ['NE', 'AX']        ['NE', 'AX']                None                None                None        ['NE', 'AX']                None        ['NE', 'AX']                None                None                None                None                None                None                None                None
+        AX                None                None                None                None                None                None                None                None                None                None            ['_eps']                None                None ['and', 'NE', 'AX']                None                None                None                None                None                None            ['_eps']                None                None                None            ['_eps']                None                None                None                None            ['_eps']                None                None
+        NE                None                None                None                None                None                None                None              ['RE']                None    ['{', 'BE', '}']                None                None                None                None                None                None              ['RE']              ['RE']                None                None                None              ['RE']                None       ['not', 'NE']                None                None                None                None                None                None                None                None
+        RE                None                None                None                None                None                None                None         ['E', 'RX']                None                None                None                None                None                None                None                None         ['E', 'RX']         ['E', 'RX']                None                None                None         ['E', 'RX']                None                None                None                None                None                None                None                None                None                None
+        RX                None                None                None                None          ['=', 'E']          ['<', 'E']          ['>', 'E']                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None                None
+         E                None                None                None                None                None                None                None         ['T', 'EY']                None                None                None                None                None                None                None                None         ['T', 'EY']         ['T', 'EY']                None                None                None         ['T', 'EY']                None                None                None                None                None                None                None                None                None                None
+        EY    ['+', 'T', 'EY']    ['-', 'T', 'EY']                None                None            ['_eps']            ['_eps']            ['_eps']                None            ['_eps']                None            ['_eps']                None            ['_eps']            ['_eps']            ['_eps']            ['_eps']                None            ['_eps']            ['_eps']                None            ['_eps']                None                None                None            ['_eps']            ['_eps']                None            ['_eps']                None            ['_eps']            ['_eps']                None
+         T                None                None                None                None                None                None                None         ['F', 'TX']                None                None                None                None                None                None                None                None         ['F', 'TX']         ['F', 'TX']                None                None                None         ['F', 'TX']                None                None                None                None                None                None                None                None                None                None
+        TX            ['_eps']            ['_eps']    ['*', 'F', 'TX']    ['/', 'F', 'TX']            ['_eps']            ['_eps']            ['_eps']                None            ['_eps']                None            ['_eps']                None            ['_eps']            ['_eps']            ['_eps']            ['_eps']                None            ['_eps']            ['_eps']                None            ['_eps']                None                None                None            ['_eps']            ['_eps']                None            ['_eps']                None            ['_eps']            ['_eps']                None
+         F                None                None                None                None                None                None                None             ['(E)']                None                None                None                None                None                None                None                None              ['ic']              ['id']                None                None                None              ['fc']                None                None                None                None                None                None                None                None                None                None
+
+
+Initial input is ['prog', 'int', 'id', ';', 'int', 'id', ';', 'int', 'id', ';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+Initial Stack is:- ['$', 'P']
+Parsing Starts..
+Current token is prog
+Push : P-> ['prog', 'DL', 'SL', 'end']
+Stack is:- ['$', 'end', 'SL', 'DL', 'prog']
+----------------
+Current token is prog
+-----------Matched Token: prog ----------
+Stack is:- ['$', 'end', 'SL', 'DL']
+Remaining input is ['int', 'id', ';', 'int', 'id', ';', 'int', 'id', ';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is int
+Push : DL-> ['D', 'DL']
+Stack is:- ['$', 'end', 'SL', 'DL', 'D']
+----------------
+Current token is int
+Push : D-> ['TY', 'VL', ';']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL', 'TY']
+----------------
+Current token is int
+Push : TY-> ['int']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL', 'int']
+----------------
+Current token is int
+-----------Matched Token: int ----------
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL']
+Remaining input is ['id', ';', 'int', 'id', ';', 'int', 'id', ';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : VL-> ['id', 'VX']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VX']
+Remaining input is [';', 'int', 'id', ';', 'int', 'id', ';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : VX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'DL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'DL']
+Remaining input is ['int', 'id', ';', 'int', 'id', ';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is int
+Push : DL-> ['D', 'DL']
+Stack is:- ['$', 'end', 'SL', 'DL', 'D']
+----------------
+Current token is int
+Push : D-> ['TY', 'VL', ';']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL', 'TY']
+----------------
+Current token is int
+Push : TY-> ['int']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL', 'int']
+----------------
+Current token is int
+-----------Matched Token: int ----------
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL']
+Remaining input is ['id', ';', 'int', 'id', ';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : VL-> ['id', 'VX']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VX']
+Remaining input is [';', 'int', 'id', ';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : VX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'DL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'DL']
+Remaining input is ['int', 'id', ';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is int
+Push : DL-> ['D', 'DL']
+Stack is:- ['$', 'end', 'SL', 'DL', 'D']
+----------------
+Current token is int
+Push : D-> ['TY', 'VL', ';']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL', 'TY']
+----------------
+Current token is int
+Push : TY-> ['int']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL', 'int']
+----------------
+Current token is int
+-----------Matched Token: int ----------
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL']
+Remaining input is ['id', ';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : VL-> ['id', 'VX']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VX']
+Remaining input is [';', 'int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : VX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'DL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'DL']
+Remaining input is ['int', 'id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is int
+Push : DL-> ['D', 'DL']
+Stack is:- ['$', 'end', 'SL', 'DL', 'D']
+----------------
+Current token is int
+Push : D-> ['TY', 'VL', ';']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL', 'TY']
+----------------
+Current token is int
+Push : TY-> ['int']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL', 'int']
+----------------
+Current token is int
+-----------Matched Token: int ----------
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VL']
+Remaining input is ['id', ';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : VL-> ['id', 'VX']
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'DL', ';', 'VX']
+Remaining input is [';', 'id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : VX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'DL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'DL']
+Remaining input is ['id', ':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : DL-> ['_eps']
+Stack is:- ['$', 'end', 'SL']
+----------------
+Current token is id
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'S']
+----------------
+Current token is id
+Push : S-> ['ES']
+Stack is:- ['$', 'end', 'SL', 'ES']
+----------------
+Current token is id
+Push : ES-> ['id', ':=', 'E', ';']
+Stack is:- ['$', 'end', 'SL', ';', 'E', ':=', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', ';', 'E', ':=']
+Remaining input is [':=', 'ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is :=
+-----------Matched Token: := ----------
+Stack is:- ['$', 'end', 'SL', ';', 'E']
+Remaining input is ['ic', ';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', ';', 'EY', 'T']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', ';', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', ';', 'EY', 'TX']
+Remaining input is [';', 'id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', ';', 'EY']
+----------------
+Current token is ;
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL']
+Remaining input is ['id', ':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'S']
+----------------
+Current token is id
+Push : S-> ['ES']
+Stack is:- ['$', 'end', 'SL', 'ES']
+----------------
+Current token is id
+Push : ES-> ['id', ':=', 'E', ';']
+Stack is:- ['$', 'end', 'SL', ';', 'E', ':=', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', ';', 'E', ':=']
+Remaining input is [':=', 'ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is :=
+-----------Matched Token: := ----------
+Stack is:- ['$', 'end', 'SL', ';', 'E']
+Remaining input is ['ic', ';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', ';', 'EY', 'T']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', ';', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', ';', 'EY', 'TX']
+Remaining input is [';', 'scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', ';', 'EY']
+----------------
+Current token is ;
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL']
+Remaining input is ['scan', 'id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is scan
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'S']
+----------------
+Current token is scan
+Push : S-> ['IOS']
+Stack is:- ['$', 'end', 'SL', 'IOS']
+----------------
+Current token is scan
+Push : IOS-> ['scan', 'id']
+Stack is:- ['$', 'end', 'SL', 'id', 'scan']
+----------------
+Current token is scan
+-----------Matched Token: scan ----------
+Stack is:- ['$', 'end', 'SL', 'id']
+Remaining input is ['id', 'print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL']
+Remaining input is ['print', 'id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is print
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'S']
+----------------
+Current token is print
+Push : S-> ['IOS']
+Stack is:- ['$', 'end', 'SL', 'IOS']
+----------------
+Current token is print
+Push : IOS-> ['print', 'PE']
+Stack is:- ['$', 'end', 'SL', 'PE', 'print']
+----------------
+Current token is print
+-----------Matched Token: print ----------
+Stack is:- ['$', 'end', 'SL', 'PE']
+Remaining input is ['id', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : PE-> ['E']
+Stack is:- ['$', 'end', 'SL', 'E']
+----------------
+Current token is id
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'EY', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'EY', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'end', 'SL', 'EY', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'EY', 'TX']
+Remaining input is ['if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is if
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'EY']
+----------------
+Current token is if
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL']
+----------------
+Current token is if
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'S']
+----------------
+Current token is if
+Push : S-> ['IS']
+Stack is:- ['$', 'end', 'SL', 'IS']
+----------------
+Current token is if
+Push : IS-> ['if', 'BE', 'then', 'SL', 'IX']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BE', 'if']
+----------------
+Current token is if
+-----------Matched Token: if ----------
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BE']
+Remaining input is ['id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : BE-> ['AE', 'BX']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AE']
+----------------
+Current token is id
+Push : AE-> ['NE', 'AX']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'NE']
+----------------
+Current token is id
+Push : NE-> ['RE']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RE']
+----------------
+Current token is id
+Push : RE-> ['E', 'RX']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'E']
+----------------
+Current token is id
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'TX']
+Remaining input is ['=', 'ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is =
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY']
+----------------
+Current token is =
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX']
+----------------
+Current token is =
+Push : RX-> ['=', 'E']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'E', '=']
+----------------
+Current token is =
+-----------Matched Token: = ----------
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'E']
+Remaining input is ['ic', 'then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'T']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'TX']
+Remaining input is ['then', 'id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is then
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY']
+----------------
+Current token is then
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX']
+----------------
+Current token is then
+Push : AX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then', 'BX']
+----------------
+Current token is then
+Push : BX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'then']
+----------------
+Current token is then
+-----------Matched Token: then ----------
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL']
+Remaining input is ['id', ':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'S']
+----------------
+Current token is id
+Push : S-> ['ES']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', 'ES']
+----------------
+Current token is id
+Push : ES-> ['id', ':=', 'E', ';']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', ';', 'E', ':=', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', ';', 'E', ':=']
+Remaining input is [':=', 'ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is :=
+-----------Matched Token: := ----------
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', ';', 'E']
+Remaining input is ['ic', ';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'T']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'TX']
+Remaining input is [';', 'else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', ';', 'EY']
+----------------
+Current token is ;
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'IX', 'SL']
+Remaining input is ['else', 'if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is else
+Push : SL-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'IX']
+----------------
+Current token is else
+Push : IX-> ['else', 'SL', 'end']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'else']
+----------------
+Current token is else
+-----------Matched Token: else ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL']
+Remaining input is ['if', 'id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is if
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'S']
+----------------
+Current token is if
+Push : S-> ['IS']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IS']
+----------------
+Current token is if
+Push : IS-> ['if', 'BE', 'then', 'SL', 'IX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BE', 'if']
+----------------
+Current token is if
+-----------Matched Token: if ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BE']
+Remaining input is ['id', '<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : BE-> ['AE', 'BX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AE']
+----------------
+Current token is id
+Push : AE-> ['NE', 'AX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'NE']
+----------------
+Current token is id
+Push : NE-> ['RE']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RE']
+----------------
+Current token is id
+Push : RE-> ['E', 'RX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'E']
+----------------
+Current token is id
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'TX']
+Remaining input is ['<', 'ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is <
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY']
+----------------
+Current token is <
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX']
+----------------
+Current token is <
+Push : RX-> ['<', 'E']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'E', '<']
+----------------
+Current token is <
+-----------Matched Token: < ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'E']
+Remaining input is ['ic', 'then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'T']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'TX']
+Remaining input is ['then', 'id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is then
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY']
+----------------
+Current token is then
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX']
+----------------
+Current token is then
+Push : AX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX']
+----------------
+Current token is then
+Push : BX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then']
+----------------
+Current token is then
+-----------Matched Token: then ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL']
+Remaining input is ['id', ':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'S']
+----------------
+Current token is id
+Push : S-> ['ES']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'ES']
+----------------
+Current token is id
+Push : ES-> ['id', ':=', 'E', ';']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'E', ':=', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'E', ':=']
+Remaining input is [':=', 'fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is :=
+-----------Matched Token: := ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'E']
+Remaining input is ['fc', ';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is fc
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'T']
+----------------
+Current token is fc
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is fc
+Push : F-> ['fc']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'TX', 'fc']
+----------------
+Current token is fc
+-----------Matched Token: fc ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'TX']
+Remaining input is [';', 'end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY']
+----------------
+Current token is ;
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL']
+Remaining input is ['end', 'while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is end
+Push : SL-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX']
+----------------
+Current token is end
+Push : IX-> ['end']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end']
+----------------
+Current token is end
+-----------Matched Token: end ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL']
+Remaining input is ['while', 'id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is while
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'S']
+----------------
+Current token is while
+Push : S-> ['WS']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'WS']
+----------------
+Current token is while
+Push : WS-> ['while', 'BE', 'do', 'SL', 'end']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BE', 'while']
+----------------
+Current token is while
+-----------Matched Token: while ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BE']
+Remaining input is ['id', '>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : BE-> ['AE', 'BX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AE']
+----------------
+Current token is id
+Push : AE-> ['NE', 'AX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'NE']
+----------------
+Current token is id
+Push : NE-> ['RE']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RE']
+----------------
+Current token is id
+Push : RE-> ['E', 'RX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'E']
+----------------
+Current token is id
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY', 'TX']
+Remaining input is ['>', 'fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is >
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY']
+----------------
+Current token is >
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX']
+----------------
+Current token is >
+Push : RX-> ['>', 'E']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'E', '>']
+----------------
+Current token is >
+-----------Matched Token: > ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'E']
+Remaining input is ['fc', 'do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is fc
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY', 'T']
+----------------
+Current token is fc
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY', 'TX', 'F']
+----------------
+Current token is fc
+Push : F-> ['fc']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY', 'TX', 'fc']
+----------------
+Current token is fc
+-----------Matched Token: fc ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY', 'TX']
+Remaining input is ['do', 'id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is do
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY']
+----------------
+Current token is do
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX']
+----------------
+Current token is do
+Push : AX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do', 'BX']
+----------------
+Current token is do
+Push : BX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'do']
+----------------
+Current token is do
+-----------Matched Token: do ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL']
+Remaining input is ['id', ':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'S']
+----------------
+Current token is id
+Push : S-> ['ES']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', 'ES']
+----------------
+Current token is id
+Push : ES-> ['id', ':=', 'E', ';']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'E', ':=', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'E', ':=']
+Remaining input is [':=', 'id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is :=
+-----------Matched Token: := ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'E']
+Remaining input is ['id', '-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX']
+Remaining input is ['-', 'ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is -
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY']
+----------------
+Current token is -
+Push : EY-> ['-', 'T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY', 'T', '-']
+----------------
+Current token is -
+-----------Matched Token: - ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY', 'T']
+Remaining input is ['ic', ';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX']
+Remaining input is [';', 'end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';', 'EY']
+----------------
+Current token is ;
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end', 'SL']
+Remaining input is ['end', 'end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is end
+Push : SL-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end']
+----------------
+Current token is end
+-----------Matched Token: end ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL']
+Remaining input is ['end', 'while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is end
+Push : SL-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end']
+----------------
+Current token is end
+-----------Matched Token: end ----------
+Stack is:- ['$', 'end', 'SL']
+Remaining input is ['while', 'id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is while
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'S']
+----------------
+Current token is while
+Push : S-> ['WS']
+Stack is:- ['$', 'end', 'SL', 'WS']
+----------------
+Current token is while
+Push : WS-> ['while', 'BE', 'do', 'SL', 'end']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BE', 'while']
+----------------
+Current token is while
+-----------Matched Token: while ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BE']
+Remaining input is ['id', '>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : BE-> ['AE', 'BX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AE']
+----------------
+Current token is id
+Push : AE-> ['NE', 'AX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'NE']
+----------------
+Current token is id
+Push : NE-> ['RE']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RE']
+----------------
+Current token is id
+Push : RE-> ['E', 'RX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'E']
+----------------
+Current token is id
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY', 'TX']
+Remaining input is ['>', 'ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is >
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX', 'EY']
+----------------
+Current token is >
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'RX']
+----------------
+Current token is >
+Push : RX-> ['>', 'E']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'E', '>']
+----------------
+Current token is >
+-----------Matched Token: > ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'E']
+Remaining input is ['ic', 'do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY', 'T']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY', 'TX']
+Remaining input is ['do', 'id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is do
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX', 'EY']
+----------------
+Current token is do
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX', 'AX']
+----------------
+Current token is do
+Push : AX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do', 'BX']
+----------------
+Current token is do
+Push : BX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'do']
+----------------
+Current token is do
+-----------Matched Token: do ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL']
+Remaining input is ['id', ':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'S']
+----------------
+Current token is id
+Push : S-> ['ES']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'ES']
+----------------
+Current token is id
+Push : ES-> ['id', ':=', 'E', ';']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'E', ':=', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'E', ':=']
+Remaining input is [':=', 'id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is :=
+-----------Matched Token: := ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'E']
+Remaining input is ['id', '+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX']
+Remaining input is ['+', 'ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is +
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY']
+----------------
+Current token is +
+Push : EY-> ['+', 'T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'T', '+']
+----------------
+Current token is +
+-----------Matched Token: + ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'T']
+Remaining input is ['ic', ';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX']
+Remaining input is [';', 'id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY']
+----------------
+Current token is ;
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL']
+Remaining input is ['id', ':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'S']
+----------------
+Current token is id
+Push : S-> ['ES']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'ES']
+----------------
+Current token is id
+Push : ES-> ['id', ':=', 'E', ';']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'E', ':=', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'E', ':=']
+Remaining input is [':=', 'fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is :=
+-----------Matched Token: := ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'E']
+Remaining input is ['fc', ';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is fc
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'T']
+----------------
+Current token is fc
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is fc
+Push : F-> ['fc']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX', 'fc']
+----------------
+Current token is fc
+-----------Matched Token: fc ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY', 'TX']
+Remaining input is [';', 'if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';', 'EY']
+----------------
+Current token is ;
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL']
+Remaining input is ['if', 'id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is if
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'S']
+----------------
+Current token is if
+Push : S-> ['IS']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IS']
+----------------
+Current token is if
+Push : IS-> ['if', 'BE', 'then', 'SL', 'IX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BE', 'if']
+----------------
+Current token is if
+-----------Matched Token: if ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BE']
+Remaining input is ['id', '=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : BE-> ['AE', 'BX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AE']
+----------------
+Current token is id
+Push : AE-> ['NE', 'AX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'NE']
+----------------
+Current token is id
+Push : NE-> ['RE']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RE']
+----------------
+Current token is id
+Push : RE-> ['E', 'RX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'E']
+----------------
+Current token is id
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY', 'TX']
+Remaining input is ['=', 'ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is =
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX', 'EY']
+----------------
+Current token is =
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'RX']
+----------------
+Current token is =
+Push : RX-> ['=', 'E']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'E', '=']
+----------------
+Current token is =
+-----------Matched Token: = ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'E']
+Remaining input is ['ic', 'then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'T']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY', 'TX']
+Remaining input is ['then', 'id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is then
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX', 'EY']
+----------------
+Current token is then
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX', 'AX']
+----------------
+Current token is then
+Push : AX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then', 'BX']
+----------------
+Current token is then
+Push : BX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'then']
+----------------
+Current token is then
+-----------Matched Token: then ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL']
+Remaining input is ['id', ':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is id
+Push : SL-> ['S', 'SL']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'S']
+----------------
+Current token is id
+Push : S-> ['ES']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', 'ES']
+----------------
+Current token is id
+Push : ES-> ['id', ':=', 'E', ';']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'E', ':=', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'E', ':=']
+Remaining input is [':=', 'ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is :=
+-----------Matched Token: := ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'E']
+Remaining input is ['ic', ';', 'end', 'end', 'end', '$']
+----------------
+Current token is ic
+Push : E-> ['T', 'EY']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'T']
+----------------
+Current token is ic
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'TX', 'F']
+----------------
+Current token is ic
+Push : F-> ['ic']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'TX', 'ic']
+----------------
+Current token is ic
+-----------Matched Token: ic ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY', 'TX']
+Remaining input is [';', 'end', 'end', 'end', '$']
+----------------
+Current token is ;
+Push : TX-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';', 'EY']
+----------------
+Current token is ;
+Push : EY-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL', ';']
+----------------
+Current token is ;
+-----------Matched Token: ; ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX', 'SL']
+Remaining input is ['end', 'end', 'end', '$']
+----------------
+Current token is end
+Push : SL-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'IX']
+----------------
+Current token is end
+Push : IX-> ['end']
+Stack is:- ['$', 'end', 'SL', 'end', 'SL', 'end']
+----------------
+Current token is end
+-----------Matched Token: end ----------
+Stack is:- ['$', 'end', 'SL', 'end', 'SL']
+Remaining input is ['end', 'end', '$']
+----------------
+Current token is end
+Push : SL-> ['_eps']
+Stack is:- ['$', 'end', 'SL', 'end']
+----------------
+Current token is end
+-----------Matched Token: end ----------
+Stack is:- ['$', 'end', 'SL']
+Remaining input is ['end', '$']
+----------------
+Current token is end
+Push : SL-> ['_eps']
+Stack is:- ['$', 'end']
+----------------
+Current token is end
+-----------Matched Token: end ----------
+Stack is:- ['$']
+Remaining input is ['$']
+----------------
+Stack is:- ['$']
+Input is ['$']
+----------------
+Parsing Successful!
+Successful

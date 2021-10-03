@@ -1,0 +1,120 @@
+Enter Question Number: Enter the Start Symbol:- Grammar is :-
+{'E': [['T', 'EX']], 'EX': [['+', 'T', 'EX'], ['_eps']], 'T': [['F', 'TX']], 'TX': [['*', 'F', 'TX'], ['_eps']], 'F': [['(', 'E', ')'], ['id']]}
+Terminals are 
+['id', '(', ')', '*', '+', '_eps', '$']
+Final generated ParseTable is:- 
+                            id                   (                   )                   *                   +                   $
+         E         ['T', 'EX']         ['T', 'EX']                None                None                None                None
+        EX                None                None            ['_eps']                None    ['+', 'T', 'EX']            ['_eps']
+         T         ['F', 'TX']         ['F', 'TX']                None                None                None                None
+        TX                None                None            ['_eps']    ['*', 'F', 'TX']            ['_eps']            ['_eps']
+         F              ['id']     ['(', 'E', ')']                None                None                None                None
+
+
+Initial input is ['id', '+', '(', 'id', '*', 'id', ')', '$']
+Initial Stack is:- ['$', 'E']
+Parsing Starts..
+Current token is id
+Push : E-> ['T', 'EX']
+Stack is:- ['$', 'EX', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'EX', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'EX', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'EX', 'TX']
+Remaining input is ['+', '(', 'id', '*', 'id', ')', '$']
+----------------
+Current token is +
+Push : TX-> ['_eps']
+Stack is:- ['$', 'EX']
+----------------
+Current token is +
+Push : EX-> ['+', 'T', 'EX']
+Stack is:- ['$', 'EX', 'T', '+']
+----------------
+Current token is +
+-----------Matched Token: + ----------
+Stack is:- ['$', 'EX', 'T']
+Remaining input is ['(', 'id', '*', 'id', ')', '$']
+----------------
+Current token is (
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'EX', 'TX', 'F']
+----------------
+Current token is (
+Push : F-> ['(', 'E', ')']
+Stack is:- ['$', 'EX', 'TX', ')', 'E', '(']
+----------------
+Current token is (
+-----------Matched Token: ( ----------
+Stack is:- ['$', 'EX', 'TX', ')', 'E']
+Remaining input is ['id', '*', 'id', ')', '$']
+----------------
+Current token is id
+Push : E-> ['T', 'EX']
+Stack is:- ['$', 'EX', 'TX', ')', 'EX', 'T']
+----------------
+Current token is id
+Push : T-> ['F', 'TX']
+Stack is:- ['$', 'EX', 'TX', ')', 'EX', 'TX', 'F']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'EX', 'TX', ')', 'EX', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'EX', 'TX', ')', 'EX', 'TX']
+Remaining input is ['*', 'id', ')', '$']
+----------------
+Current token is *
+Push : TX-> ['*', 'F', 'TX']
+Stack is:- ['$', 'EX', 'TX', ')', 'EX', 'TX', 'F', '*']
+----------------
+Current token is *
+-----------Matched Token: * ----------
+Stack is:- ['$', 'EX', 'TX', ')', 'EX', 'TX', 'F']
+Remaining input is ['id', ')', '$']
+----------------
+Current token is id
+Push : F-> ['id']
+Stack is:- ['$', 'EX', 'TX', ')', 'EX', 'TX', 'id']
+----------------
+Current token is id
+-----------Matched Token: id ----------
+Stack is:- ['$', 'EX', 'TX', ')', 'EX', 'TX']
+Remaining input is [')', '$']
+----------------
+Current token is )
+Push : TX-> ['_eps']
+Stack is:- ['$', 'EX', 'TX', ')', 'EX']
+----------------
+Current token is )
+Push : EX-> ['_eps']
+Stack is:- ['$', 'EX', 'TX', ')']
+----------------
+Current token is )
+-----------Matched Token: ) ----------
+Stack is:- ['$', 'EX', 'TX']
+Remaining input is ['$']
+----------------
+Current token is $
+Push : TX-> ['_eps']
+Stack is:- ['$', 'EX']
+----------------
+Current token is $
+Push : EX-> ['_eps']
+Stack is:- ['$']
+----------------
+Stack is:- ['$']
+Input is ['$']
+----------------
+Parsing Successful!
+Successful

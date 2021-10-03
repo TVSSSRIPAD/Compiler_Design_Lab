@@ -1,0 +1,7 @@
+E,T,F,EX,TX
+id,(,),*,+,_eps,$
+E -> T EX
+EX -> + T EX | _eps
+T -> F TX
+TX -> * F TX | _eps
+F -> ( E ) | id
