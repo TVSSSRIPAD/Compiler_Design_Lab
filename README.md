@@ -10,4 +10,4 @@ A repo which contains programs implemented as part of CD Lab
 ### Lab4: Syntax Analysis - Removal of left-recursion; Producing Left-factoring grammar and implementing RecursiveDescentParser (Top-Down Parser)
 ### Lab5: LL1 Predictive Parser in Python
 ### Lab6: LR0 Parser
-### Lab8: Yacc/Bison parser generator: Attribute Grammar for Calculator
+### Lab8: Yacc/Bison parser generator
