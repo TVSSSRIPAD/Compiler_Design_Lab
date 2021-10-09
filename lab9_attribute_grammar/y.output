@@ -1,0 +1,293 @@
+Grammar
+
+    0 $accept: start $end
+
+    1 start: E
+
+    2 E: E PLUS T
+    3  | E MINUS T
+    4  | T
+
+    5 T: T MULT S
+    6  | T MULT MULT S
+    7  | T MOD S
+    8  | T DIV S
+    9  | S
+
+   10 S: NUM
+   11  | MINUS NUM
+   12  | OPEN_BRACKET E CLOSE_BRACKET
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    PLUS (258) 2
+    MINUS (259) 3 11
+    MULT (260) 5 6
+    DIV (261) 8
+    NUM (262) 10 11
+    OPEN_BRACKET (263) 12
+    CLOSE_BRACKET (264) 12
+    MOD (265) 7
+
+
+Nonterminals, with rules where they appear
+
+    $accept (11)
+        on left: 0
+    start (12)
+        on left: 1
+        on right: 0
+    E (13)
+        on left: 2 3 4
+        on right: 1 2 3 12
+    T (14)
+        on left: 5 6 7 8 9
+        on right: 2 3 4 5 6 7 8
+    S (15)
+        on left: 10 11 12
+        on right: 5 6 7 8 9
+
+
+State 0
+
+    0 $accept: . start $end
+
+    MINUS         shift, and go to state 1
+    NUM           shift, and go to state 2
+    OPEN_BRACKET  shift, and go to state 3
+
+    start  go to state 4
+    E      go to state 5
+    T      go to state 6
+    S      go to state 7
+
+
+State 1
+
+   11 S: MINUS . NUM
+
+    NUM  shift, and go to state 8
+
+
+State 2
+
+   10 S: NUM .
+
+    $default  reduce using rule 10 (S)
+
+
+State 3
+
+   12 S: OPEN_BRACKET . E CLOSE_BRACKET
+
+    MINUS         shift, and go to state 1
+    NUM           shift, and go to state 2
+    OPEN_BRACKET  shift, and go to state 3
+
+    E  go to state 9
+    T  go to state 6
+    S  go to state 7
+
+
+State 4
+
+    0 $accept: start . $end
+
+    $end  shift, and go to state 10
+
+
+State 5
+
+    1 start: E .
+    2 E: E . PLUS T
+    3  | E . MINUS T
+
+    PLUS   shift, and go to state 11
+    MINUS  shift, and go to state 12
+
+    $default  reduce using rule 1 (start)
+
+
+State 6
+
+    4 E: T .
+    5 T: T . MULT S
+    6  | T . MULT MULT S
+    7  | T . MOD S
+    8  | T . DIV S
+
+    MULT  shift, and go to state 13
+    DIV   shift, and go to state 14
+    MOD   shift, and go to state 15
+
+    $default  reduce using rule 4 (E)
+
+
+State 7
+
+    9 T: S .
+
+    $default  reduce using rule 9 (T)
+
+
+State 8
+
+   11 S: MINUS NUM .
+
+    $default  reduce using rule 11 (S)
+
+
+State 9
+
+    2 E: E . PLUS T
+    3  | E . MINUS T
+   12 S: OPEN_BRACKET E . CLOSE_BRACKET
+
+    PLUS           shift, and go to state 11
+    MINUS          shift, and go to state 12
+    CLOSE_BRACKET  shift, and go to state 16
+
+
+State 10
+
+    0 $accept: start $end .
+
+    $default  accept
+
+
+State 11
+
+    2 E: E PLUS . T
+
+    MINUS         shift, and go to state 1
+    NUM           shift, and go to state 2
+    OPEN_BRACKET  shift, and go to state 3
+
+    T  go to state 17
+    S  go to state 7
+
+
+State 12
+
+    3 E: E MINUS . T
+
+    MINUS         shift, and go to state 1
+    NUM           shift, and go to state 2
+    OPEN_BRACKET  shift, and go to state 3
+
+    T  go to state 18
+    S  go to state 7
+
+
+State 13
+
+    5 T: T MULT . S
+    6  | T MULT . MULT S
+
+    MINUS         shift, and go to state 1
+    MULT          shift, and go to state 19
+    NUM           shift, and go to state 2
+    OPEN_BRACKET  shift, and go to state 3
+
+    S  go to state 20
+
+
+State 14
+
+    8 T: T DIV . S
+
+    MINUS         shift, and go to state 1
+    NUM           shift, and go to state 2
+    OPEN_BRACKET  shift, and go to state 3
+
+    S  go to state 21
+
+
+State 15
+
+    7 T: T MOD . S
+
+    MINUS         shift, and go to state 1
+    NUM           shift, and go to state 2
+    OPEN_BRACKET  shift, and go to state 3
+
+    S  go to state 22
+
+
+State 16
+
+   12 S: OPEN_BRACKET E CLOSE_BRACKET .
+
+    $default  reduce using rule 12 (S)
+
+
+State 17
+
+    2 E: E PLUS T .
+    5 T: T . MULT S
+    6  | T . MULT MULT S
+    7  | T . MOD S
+    8  | T . DIV S
+
+    MULT  shift, and go to state 13
+    DIV   shift, and go to state 14
+    MOD   shift, and go to state 15
+
+    $default  reduce using rule 2 (E)
+
+
+State 18
+
+    3 E: E MINUS T .
+    5 T: T . MULT S
+    6  | T . MULT MULT S
+    7  | T . MOD S
+    8  | T . DIV S
+
+    MULT  shift, and go to state 13
+    DIV   shift, and go to state 14
+    MOD   shift, and go to state 15
+
+    $default  reduce using rule 3 (E)
+
+
+State 19
+
+    6 T: T MULT MULT . S
+
+    MINUS         shift, and go to state 1
+    NUM           shift, and go to state 2
+    OPEN_BRACKET  shift, and go to state 3
+
+    S  go to state 23
+
+
+State 20
+
+    5 T: T MULT S .
+
+    $default  reduce using rule 5 (T)
+
+
+State 21
+
+    8 T: T DIV S .
+
+    $default  reduce using rule 8 (T)
+
+
+State 22
+
+    7 T: T MOD S .
+
+    $default  reduce using rule 7 (T)
+
+
+State 23
+
+    6 T: T MULT MULT S .
+
+    $default  reduce using rule 6 (T)
