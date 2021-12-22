@@ -1,0 +1,22 @@
+main ()
+{
+  int D.2318;
+
+  {
+    int y;
+    int x;
+
+    y = 7;
+    _1 = y * x;
+    _2 = _1 + 5;
+    _3 = _2 % 12;
+    x = 7 - _3;
+    printf ("Value is %d\n", x);
+    D.2318 = 0;
+    return D.2318;
+  }
+  D.2318 = 0;
+  return D.2318;
+}
+
+

@@ -1,0 +1,34 @@
+Successfully built the DAG
+Root is :- 7
+ Node Number :- 0
+ Node Value is :- 1
+  Left Child and Right Child are :- -1 -1
+-----------------------------------------------------
+ Node Number :- 1
+ Node Value is :- 2
+  Left Child and Right Child are :- -1 -1
+-----------------------------------------------------
+ Node Number :- 2
+ Node Value is :- 3
+  Left Child and Right Child are :- -1 -1
+-----------------------------------------------------
+ Node Number :- 3
+ Node Value is :- *
+ Left Child and Right Child are :- 1 2
+-----------------------------------------------------
+ Node Number :- 4
+ Node Value is :- +
+ Left Child and Right Child are :- 0 3
+-----------------------------------------------------
+ Node Number :- 5
+ Node Value is :- 5
+  Left Child and Right Child are :- -1 -1
+-----------------------------------------------------
+ Node Number :- 6
+ Node Value is :- +
+ Left Child and Right Child are :- 5 3
+-----------------------------------------------------
+ Node Number :- 7
+ Node Value is :- +
+ Left Child and Right Child are :- 4 6
+-----------------------------------------------------

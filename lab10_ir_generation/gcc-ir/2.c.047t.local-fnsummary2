@@ -1,0 +1,56 @@
+
+;; Function main (main, funcdef_no=0, decl_uid=2313, cgraph_uid=1, symbol_order=0)
+
+
+Analyzing function body size: main
+
+IPA function summary for main/0
+  global time:     18.000000
+  self size:       10
+  global size:     0
+  min size:       0
+  self stack:      0
+  global stack:    0
+    size:5.000000, time:6.000000
+    size:2.000000, time:0.000000,  executed if:(not inlined)
+  calls:
+    printf/1 function body not available
+      loop depth: 0 freq:1.00 size: 3 time: 12
+
+main ()
+{
+  int i;
+  int x;
+  int y;
+  int D.2322;
+  int _8;
+
+  <bb 2> :
+  y_3 = 0;
+  x_4 = 10;
+  i_5 = 0;
+  goto <bb 4>; [INV]
+
+  <bb 3> :
+  y_9 = y_1 + 1;
+  i_10 = i_2 + 1;
+
+  <bb 4> :
+  # y_1 = PHI <y_3(2), y_9(3)>
+  # i_2 = PHI <i_5(2), i_10(3)>
+  if (i_2 < x_4)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  printf ("Value is %d\n", y_1);
+  _8 = 0;
+
+  <bb 6> :
+<L3>:
+  return _8;
+
+}
+
+

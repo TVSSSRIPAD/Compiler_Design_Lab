@@ -1,0 +1,22 @@
+digraph visualiseAST {
+	color=white;
+	fontcolor=white;
+	bgcolor=black;
+	label=" Successfully built the DAG";
+	node [color=white fontcolor=white  label=" 1"]; addr_0
+	node [color=white fontcolor=white  label=" 2"]; addr_1
+	node [color=white fontcolor=white  label=" 3"]; addr_2
+	node [color=white fontcolor=white  label=" *"]; addr_3
+	node [color=white fontcolor=white  label=" +"]; addr_4
+	node [color=white fontcolor=white  label=" 5"]; addr_5
+	node [color=white fontcolor=white  label=" +"]; addr_6
+	node [color=white fontcolor=white  label=" +"]; addr_7
+	addr_3 -> addr_1 [color=white fontcolor=white ];
+	addr_3 -> addr_2 [color=white fontcolor=white ];
+	addr_4 -> addr_0 [color=white fontcolor=white ];
+	addr_4 -> addr_3 [color=white fontcolor=white ];
+	addr_6 -> addr_5 [color=white fontcolor=white ];
+	addr_6 -> addr_3 [color=white fontcolor=white ];
+	addr_7 -> addr_4 [color=white fontcolor=white ];
+	addr_7 -> addr_6 [color=white fontcolor=white ];
+}

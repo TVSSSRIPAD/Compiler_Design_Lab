@@ -1,0 +1,26 @@
+
+;; Function main (null)
+;; enabled by -tree-original
+
+
+{
+  int y = 0;
+  int x = 10;
+  int i;
+
+    int y = 0;
+    int x = 10;
+    int i;
+  i = 0;
+  goto <D.2319>;
+  <D.2318>:;
+  y++ ;
+  i++ ;
+  <D.2319>:;
+  if (i < x) goto <D.2318>; else goto <D.2320>;
+  <D.2320>:;
+  printf ((const char * restrict) "Value is %d\n", y);
+  return 0;
+}
+return 0;
+
